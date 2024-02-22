@@ -18,20 +18,22 @@ Requirements
 |IAM group|terraform-group|arn:aws:iam::730335487196:group/terraform-group|IAM group with necessary permissions for Terraform and Terragrun.|
 
 Directory Structure :
+
 Environments/
+
 ├── Development/
-│   ├── Instances/
-│   └── VPC/
-├── Production/
-│   ├── Instances/
-│   └── VPC/
-└── Staging/
-    ├── Instances/
-    └── VPC/
+-│   ├── Instances/
+-│   └── VPC/
+-├── Production/
+-│   ├── Instances/
+-│   └── VPC/
+-└── Staging/
+ -   ├── Instances/
+  -  └── VPC/
 
 Module/
-|---Instanc
-|---VPC
+-|---Instanc
+-|---VPC
 
 Setup Terraform Environment
 
