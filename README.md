@@ -21,15 +21,16 @@ Directory Structure :
 
 Environments/
 
-├── Development/
--│   ├── Instances/
--│   └── VPC/
--├── Production/
--│   ├── Instances/
--│   └── VPC/
--└── Staging/
- -   ├── Instances/
-  -  └── VPC/
+- Development
+  - Instances
+  - VPC
+- Production
+  - Instances
+  - VPC
+- Staging
+  - Instances
+  - VPC
+
 
 Module/
 -|---Instanc
