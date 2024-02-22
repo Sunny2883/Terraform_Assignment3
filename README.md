@@ -1,9 +1,34 @@
+ Terraform with Terragrunt for Multiple Environments
+
+ Objective: Set up Terraform configurations for different environments (e.g., dev, staging, prod) using Terragrunt.
+
+Description:
+
+This project directory is structured to organize Terragrunt configurations for managing multiple environments efficiently. Each environment (e.g., dev, staging, prod) has its own Terragrunt configuration file referencing a common Terraform module. The Terragrunt configurations define environment-specific variables and settings tailored to each environment's requirements.
+
+Overview:
+
+The directory structure is designed to organize Terragrunt configurations for different environments, ensuring a systematic approach to managing infrastructure across multiple environments.
+
+Each environment (dev, staging, prod) has its own dedicated directory containing a Terragrunt configuration file specific to that environment.
+
+The Terragrunt configuration files reference a common Terraform module, enabling code reusability and ensuring consistency across environments.
+
+Environment-specific variables are defined within the Terragrunt configuration files, allowing for customization of settings and parameters based on the requirements of each environment.
+
+To deploy each environment separately, users can navigate to the corresponding directory and execute Terragrunt commands (e.g., terragrunt init, terragrunt apply) to initialize and apply the configurations without error.
+
 Requirements
+
 -•	Terraform v1.7.3 installed on Windows_amd64.
+
+                terraform --version
 
 ![Terraform_version](./Images/image.png)
 
 -•	Terragrunt should be installed.
+
+               terragrunt --version
 
 ![Terragrunt](./Images/image-1.png)
 
@@ -44,6 +69,8 @@ Setup Enviroment
 
 -•	Initialize Terraform:
 
+               terraform init
+
 -•	Run terraform init in an empty directory where you plan to store your Terraform configurations.
 
 Directory Structure :
@@ -74,10 +101,11 @@ Module/
 -3.	Create Instances.tf for instance configurations.
 
 -4.	Add key-pair.tf for attaching keys.
-x
+
 -5.	Include security-group.tf for security group settings.
 
 For VPC Module:
+
 -1.	Create Vpc_subnet.tf to configure VPC and subnet.
 
 -2.	Define outputs in outputs.tf.
@@ -91,10 +119,25 @@ Terragrunt Configuration
 -•	Inside the environment directory, create a terragrunt.hcl file to configure common settings, such as remote state management and backend configurations shared across multiple environments or modules.
 
 **terragrunt.hcl**
+
 Prerequisite: 
+
 You need an AWS account with the necessary permissions to create and manage S3 buckets and DynamoDB tables.
 
 AWS Account with Permissions:
+
+Policy:
+
+                {
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": "sts:AssumeRole",
+            "Resource": "arn:aws:iam::730335487196:role/terraform"
+        }
+    ]
+}
 
 Terraform requires access to AWS services to provision and manage resources. To interact with S3 buckets and DynamoDB tables for remote state management, your AWS account must have the appropriate IAM permissions.
 
