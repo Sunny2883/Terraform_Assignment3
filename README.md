@@ -1,5 +1,8 @@
 Requirements
 -•	Terraform v1.7.3 installed on Windows_amd64.
+![Terraform_version](image.png)
+-•	Terragrunt should be installed.
+![Terragrunt](image-1.png)
 -•	An AWS account with permissions to create and manage S3 buckets and DynamoDB tables.
 -•	AWS credentials configured locally on the machine.
 
@@ -48,19 +51,26 @@ Module/
 
  For Instance Module:
 -1.	Create a main.tf file for resource configurations.
+
 -2.	Define input variables in variables.tf.
+
 -3.	Create Instances.tf for instance configurations.
+
 -4.	Add key-pair.tf for attaching keys.
+x
 -5.	Include security-group.tf for security group settings.
 
 For VPC Module:
 -1.	Create Vpc_subnet.tf to configure VPC and subnet.
+
 -2.	Define outputs in outputs.tf.
+
 -3.	Use variable.tf to define input variables for module configurations.
 
 Terragrunt Configuration
 
 -1.	Common Terragrunt Settings:
+
 -•	Inside the environment directory, create a terragrunt.hcl file to configure common settings, such as remote state management and backend configurations shared across multiple environments or modules.
 
 **terragrunt.hcl**
@@ -88,4 +98,31 @@ Environment Variables: Alternatively, you can set the AWS_ACCESS_KEY_ID, AWS_SEC
 |bucket|terraformsunny|Name of the S3 bucket to store Terraform state files.|
 |dynamodb_table|terraform-table|Name of the DynamoDB table used for state locking.|
 |region|ap-south-1|AWS region where the S3 bucket is located.|
+
+Before applying any configurations, initialize the Terragrunt environment by running terragrunt init.
+
+Purpose: The terragrunt init command is used to initialize a Terragrunt project. It sets up the working directory and prepares it for Terragrunt's use.
+
+What it does:
+
+Downloads the necessary Terraform configurations, modules, and providers specified in the Terragrunt configuration files (terragrunt.hcl).
+
+Terragrunt Planning (plan):
+
+Purpose: The terragrunt plan command generates an execution plan, showing what actions Terraform will take to change the infrastructure based on the defined configurations.
+
+What it does:
+
+Analyzes the Terraform configurations and compares them to the current state of the infrastructure.
+
+
+Terragrunt Apply (apply):
+
+Purpose: The terragrunt apply command is used to apply the Terraform configurations and make changes to the infrastructure as specified.
+
+What it does:
+
+Executes the planned actions generated during the terragrunt plan phase.
+Creates, modifies, or deletes resources according to the defined configurations.
+Updates the Terraform state file to reflect the changes made to the infrastructure.
 
