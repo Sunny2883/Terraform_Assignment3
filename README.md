@@ -181,6 +181,8 @@ Before applying any configurations, initialize the Terragrunt environment by run
 
 ![Terragrunt init command](./Images/image-9.png)
 
+               terragrunt init
+
 Purpose: The terragrunt init command is used to initialize a Terragrunt project. It sets up the working directory and prepares it for Terragrunt's use.
 
 What it does:
@@ -188,6 +190,8 @@ What it does:
 Downloads the necessary Terraform configurations, modules, and providers specified in the Terragrunt configuration files (terragrunt.hcl).
 
 Terragrunt Planning (plan):
+
+             terragrunt plan
 
 ![Terragrunt plan command](./Images/image-10.png)
 
@@ -200,6 +204,8 @@ Analyzes the Terraform configurations and compares them to the current state of 
 
 Terragrunt Apply (apply):
 
+                  terragrunt apply
+                  
 ![Terragrunt apply command](./Images/image-11.png)
 
 Purpose: The terragrunt apply command is used to apply the Terraform configurations and make changes to the infrastructure as specified.
