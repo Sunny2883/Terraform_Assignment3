@@ -1,11 +1,11 @@
 Requirements
 -•	Terraform v1.7.3 installed on Windows_amd64.
 
-![Terraform_version](image.png)
+![Terraform_version](./Images/image.png)
 
 -•	Terragrunt should be installed.
 
-![Terragrunt](image-1.png)
+![Terragrunt](./Images/image-1.png)
 
 -•	An AWS account with permissions to create and manage S3 buckets and DynamoDB tables.
 
@@ -25,17 +25,17 @@ Requirements
 | IAM User |terraform-sunny|arn:aws:iam::730335487196:user/terraform-sunny/terraform-table|IAM user with necessary permissions for Terraform and Terragrunt.|
 |IAM group|terraform-group|arn:aws:iam::730335487196:group/terraform-group|IAM group with necessary permissions for Terraform and Terragrun.|
 
-![s3 BUcket](image-4.png)
+![s3 BUcket](./Images/image-4.png)
 
-![dynamoDB](image-5.png)
+![dynamoDB](./Images/image-5.png)
 
-![IAM user](image-3.png)
+![IAM user](./Images/image-3.png)
 
-![IAM user group](image-2.png)
+![IAM user group](./Images/image-2.png)
 
-![IAM role](image-6.png)
+![IAM role](./Images/image-6.png)
 
-![IAM plicy](image-7.png)
+![IAM plicy](./Images/image-7.png)
 
 
 Setup Terraform Environment
@@ -60,7 +60,7 @@ Environments/
   - Instances
   - VPC
 
-![Directory structure](image-8.png)
+![Directory structure](./Images/image-8.png)
 
 Module/
  -Instanc
@@ -118,7 +118,7 @@ Environment Variables: Alternatively, you can set the AWS_ACCESS_KEY_ID, AWS_SEC
 
 Before applying any configurations, initialize the Terragrunt environment by running terragrunt init.
 
-![Terragrunt init command](image-9.png)
+![Terragrunt init command](./Images/image-9.png)
 
 Purpose: The terragrunt init command is used to initialize a Terragrunt project. It sets up the working directory and prepares it for Terragrunt's use.
 
@@ -128,7 +128,7 @@ Downloads the necessary Terraform configurations, modules, and providers specifi
 
 Terragrunt Planning (plan):
 
-![Terragrunt plan command](image-10.png)
+![Terragrunt plan command](./Images/image-10.png)
 
 Purpose: The terragrunt plan command generates an execution plan, showing what actions Terraform will take to change the infrastructure based on the defined configurations.
 
@@ -139,7 +139,7 @@ Analyzes the Terraform configurations and compares them to the current state of 
 
 Terragrunt Apply (apply):
 
-![Terragrunt apply command](image-11.png)
+![Terragrunt apply command](./Images/image-11.png)
 
 Purpose: The terragrunt apply command is used to apply the Terraform configurations and make changes to the infrastructure as specified.
 
@@ -151,10 +151,10 @@ Updates the Terraform state file to reflect the changes made to the infrastructu
 
 Final Output:
 
-![ENstances screenshot](image-12.png)
+![ENstances screenshot](./Images/image-12.png)
 
-![VPC screenshot](image-13.png)
+![VPC screenshot](./Images/image-13.png)
 
-![Key pair](image-14.png)
+![Key pair](./Images/image-14.png)
 
-![Destroy command](image-15.png)
+![Destroy command](./Images/image-15.png)
