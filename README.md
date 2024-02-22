@@ -1,4 +1,4 @@
- Terraform with Terragrunt for Multiple Environments
+ **Terraform with Terragrunt for Multiple Environments**
 
  Objective: Set up Terraform configurations for different environments (e.g., dev, staging, prod) using Terragrunt.
 
