@@ -124,6 +124,18 @@ Prerequisite:
 
 You need an AWS account with the necessary permissions to create and manage S3 buckets and DynamoDB tables.
 
+IAM user policy:
+
+               {
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": "*",
+            "Resource": "*"
+        }
+    ]
+   }
 AWS Account with Permissions:
 
 Policy:
@@ -137,7 +149,8 @@ Policy:
             "Resource": "arn:aws:iam::730335487196:role/terraform"
         }
     ]
-}
+               }
+
 
 Terraform requires access to AWS services to provision and manage resources. To interact with S3 buckets and DynamoDB tables for remote state management, your AWS account must have the appropriate IAM permissions.
 
