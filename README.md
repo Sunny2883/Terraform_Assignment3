@@ -1,8 +1,12 @@
 Requirements
 -•	Terraform v1.7.3 installed on Windows_amd64.
+
 ![Terraform_version](image.png)
+
 -•	Terragrunt should be installed.
+
 ![Terragrunt](image-1.png)
+
 -•	An AWS account with permissions to create and manage S3 buckets and DynamoDB tables.
 -•	AWS credentials configured locally on the machine.
 
