@@ -140,7 +140,8 @@ IAM user policy:
             "Resource": "*"
         }
     ]
-   }
+     }
+
 AWS Account with Permissions:
 
 Policy:
@@ -205,7 +206,7 @@ Analyzes the Terraform configurations and compares them to the current state of 
 Terragrunt Apply (apply):
 
                   terragrunt apply
-                  
+
 ![Terragrunt apply command](./Images/image-11.png)
 
 Purpose: The terragrunt apply command is used to apply the Terraform configurations and make changes to the infrastructure as specified.
