@@ -1,5 +1,7 @@
  <div align="center">
+ <strong>
  **Terraform with Terragrunt for Multiple Environments**
+ </strong>
 </div>
  Objective: Set up Terraform configurations for different environments (e.g., dev, staging, prod) using Terragrunt.
 
