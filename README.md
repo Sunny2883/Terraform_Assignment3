@@ -178,6 +178,42 @@ Environment Variables: Alternatively, you can set the AWS_ACCESS_KEY_ID, AWS_SEC
 |dynamodb_table|terraform-table|Name of the DynamoDB table used for state locking.|
 |region|ap-south-1|AWS region where the S3 bucket is located.|
 
+Bucket policy :
+
+               {
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "EnforcedTLS",
+            "Effect": "Deny",
+            "Principal": "*",
+            "Action": "s3:*",
+            "Resource": [
+                "arn:aws:s3:::terraformsunny",
+                "arn:aws:s3:::terraformsunny/*"
+            ],
+            "Condition": {
+                "Bool": {
+                    "aws:SecureTransport": "false"
+                }
+            }
+        },
+        {
+            "Sid": "RootAccess",
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "arn:aws:iam::730335487196:root"
+            },
+            "Action": "s3:*",
+            "Resource": [
+                "arn:aws:s3:::terraformsunny",
+                "arn:aws:s3:::terraformsunny/*"
+            ]
+        }
+    ]
+  }
+
+  
 Before applying any configurations, initialize the Terragrunt environment by running terragrunt init.
 
 ![Terragrunt init command](./Images/image-9.png)
